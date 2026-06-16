@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>BOSS BATTLE - Zoroark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Tela de inicio -->
+        <div id="start-screen" class="screen active">
+            <img src="https://i.imgur.com/2vYlK3M.jpg" class="bg-image">
+            <div class="overlay-red"></div>
+            <div class="start-content">
+                <div class="logo">
+                    <h1>BOSS BATTLE</h1>
+                    <h2>VS ZOROARK</h2>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="trainer-name" placeholder="NOME DO TREINADOR" maxlength="12">
+                    <button id="start-btn" class="btn-red">INICIAR BATALHA</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de cutscene -->
+        <div id="cutscene-screen" class="screen">
+            <img src="https://i.imgur.com/2vYlK3M.jpg" class="bg-image">
+            <div class="overlay-red"></div>
+            <div class="cutscene-box">
+                <div class="cutscene-text" id="cutscene-text"></div>
+                <button id="next-btn" class="btn-red">CONTINUAR</button>
+            </div>
+        </div>
+
+        <!-- Tela de batalha -->
+        <div id="battle-screen" class="screen">
+            <img src="https://i.imgur.com/XyZMZwP.jpg" class="bg-image">
+            <div class="overlay-red-light"></div>
+            
+            <div class="pokemon-area enemy-area">
+                <div class="pokemon-card boss-card">
+                    <div class="pokemon-name">BOSS ZOROARK</div>
+                    <div class="hp-bar boss-hp">
+                        <div class="hp-fill" id="enemy-hp-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="hp-text" id="enemy-hp-text"></div>
+                </div>
+                <div class="pokemon-sprite" id="enemy-sprite">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png" alt="Zoroark">
+                </div>
+            </div>
+
+            <div class="pokemon-area player-area">
+                <div class="pokemon-sprite" id="player-sprite">
+                    <img src="" id="player-sprite-img" alt="">
+                </div>
+                <div class="pokemon-card">
+                    <div class="pokemon-name" id="player-name">Charizard</div>
+                    <div class="hp-bar">
+                        <div class="hp-fill" id="player-hp-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="hp-text" id="player-hp-text"></div>
+                </div>
+            </div>
+
+            <div class="message-area">
+                <div class="message-text" id="message-text">BATALHA FINAL</div>
+            </div>
+
+            <div class="action-area" id="action-area">
+                <div class="action-buttons">
+                    <button class="action-btn fight-btn">LUTAR</button>
+                    <button class="action-btn pokemon-btn">POKEMON</button>
+                </div>
+            </div>
+
+            <div class="moves-area" id="moves-area" style="display: none;">
+                <div class="moves-grid" id="moves-grid"></div>
+                <button class="back-btn" id="back-fight-btn">VOLTAR</button>
+            </div>
+
+            <div class="switch-area" id="switch-area" style="display: none;">
+                <div class="switch-grid" id="switch-grid"></div>
+                <button class="back-btn" id="back-switch-btn">VOLTAR</button>
+            </div>
+        </div>
+
+        <!-- Tela de resultado -->
+        <div id="result-screen" class="screen">
+            <img src="https://i.imgur.com/2vYlK3M.jpg" class="bg-image">
+            <div class="overlay-red"></div>
+            <div class="result-box">
+                <div id="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <p id="result-message"></p>
+                <button id="restart-btn" class="btn-red">REVANCHE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
